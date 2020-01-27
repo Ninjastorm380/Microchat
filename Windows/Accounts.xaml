@@ -1,0 +1,81 @@
+﻿<Window x:Class="Accounts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Microchat"
+        mc:Ignorable="d"
+        Title="Microchat - Login" Height="269" Width="727" WindowStartupLocation="CenterOwner" ResizeMode="NoResize">
+    <Grid>
+        <TabControl x:Name="AccountFramesManager" SelectionChanged="TabControl_SelectionChanged">
+            <TabItem Header="TabItem" Margin="10,0,-6,0" Height="0" Width="50" Tag="Login">
+                <Grid Background="White" >
+                    <DockPanel Height="133" LastChildFill="False" Margin="172,39,171,42" VerticalAlignment="Center" Width="372" Background="White" HorizontalAlignment="Center">
+                        <Image Height="32" VerticalAlignment="Top" DockPanel.Dock="Top" Source="/Microchat;component/Images/favicon.ico" Margin="6,6,6,1"/>
+                        <TextBlock Height="16" TextWrapping="Wrap" Text="Login or signup with a UserID and Password to continue" VerticalAlignment="Top" DockPanel.Dock="Top" TextAlignment="Center" Margin="0,1,0,10"/>
+                        <DockPanel Height="18" VerticalAlignment="Top" DockPanel.Dock="Top" Margin="6,1">
+                            <TextBlock Height="20" TextWrapping="Wrap" Text="UserID:" VerticalAlignment="Top" Width="55"/>
+                            <TextBox Height="18" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                        </DockPanel>
+                        <DockPanel Height="18" VerticalAlignment="Top" DockPanel.Dock="Top" Margin="6,1">
+                            <TextBlock Height="20" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top" Margin="0,0,0,-2" Width="55"/>
+                            <PasswordBox Height="18" VerticalAlignment="Top" PasswordChar="+"/>
+                        </DockPanel>
+                        <DockPanel Height="20" VerticalAlignment="Top" DockPanel.Dock="Top" Margin="6,1,6,6">
+                            <Button Content="Login" Height="20" VerticalAlignment="Top" Width="75" DockPanel.Dock="Right" Margin="1,0,0,0"/>
+                            <Button Content="Signup" Height="20" VerticalAlignment="Top" Width="75" DockPanel.Dock="Right" Margin="0,0,1,0"/>
+                            <Button Content="Forgot login" Height="20" VerticalAlignment="Top" Width="75" Click="LoginRecoveryButtonClicked"/>
+                            <Grid Height="20" VerticalAlignment="Top"/>
+
+                        </DockPanel>
+                    </DockPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem" BorderBrush="#FFABADB3" Background="#FFEEEEEE" Height="0" Margin="22,0,-22,0" Width="50" Tag="Account Recovery">
+                <Grid Background="White">
+                    <TextBlock HorizontalAlignment="Left" Margin="18,33,0,0" TextWrapping="Wrap" Text="Last known UserID:" VerticalAlignment="Top" Height="18"/>
+                    <TextBox Height="20" Margin="124,31,90,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}"/>
+                    <Button Content="Search" HorizontalAlignment="Right" Margin="0,31,10,0" VerticalAlignment="Top" Width="75"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Find your UserID" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock TextWrapping="Wrap" Text="Result: N/A" VerticalAlignment="Top" Margin="18,56,90,0"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="10,107,0,0" TextWrapping="Wrap" Text="Find your password" VerticalAlignment="Top" FontWeight="Bold"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="18,129,0,0" TextWrapping="Wrap" Text="UserID:" VerticalAlignment="Top" Height="18"/>
+                    <TextBox Height="20" Margin="61,127,90,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}"/>
+                    <Button Content="Email me" HorizontalAlignment="Right" Margin="0,127,10,0" VerticalAlignment="Top" Width="75"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="145,10,0,0" TextWrapping="Wrap" Text="Type in the UserID you last remember using, we will search for the best match" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="145,106,0,0" TextWrapping="Wrap" Text="Type in your current UserID, and we will use your recovery email to verify it's you and get your password" VerticalAlignment="Top"/>
+                    <Button Content="Get Password" HorizontalAlignment="Right" Margin="0,152,10,0" VerticalAlignment="Top" Width="75"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="18,154,0,0" TextWrapping="Wrap" Text="Security Code:" VerticalAlignment="Top" Height="18"/>
+                    <TextBox Height="20" Margin="99,152,90,0" TextWrapping="Wrap" VerticalAlignment="Top" Background="{x:Null}"/>
+                    <Button Content="Return to login..." HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="94" Click="ReturnToLoginButtonClicked"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="18,177,0,0" TextWrapping="Wrap" Text="Your password is: N/A" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top" Width="50" Margin="35,0,-36,0" Tag="Account Settings">
+                <Grid Background="White">
+                    <TextBlock HorizontalAlignment="Left" Margin="0,2,0,0" TextWrapping="Wrap" Text="UserID:" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="17" Margin="109,1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="0,24,0,0" TextWrapping="Wrap" Text="Password:" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="17" Margin="109,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="0,46,0,0" TextWrapping="Wrap" Text="Username:" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="17" Margin="109,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="0,68,0,0" TextWrapping="Wrap" Text="Recovery Email:" VerticalAlignment="Top"/>
+                    <TextBox HorizontalAlignment="Left" Height="17" Margin="109,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="297"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="0,129,0,0" TextWrapping="Wrap" Text="Message Backcolor:" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="0,96,0,0" TextWrapping="Wrap" Text="Profile Picture:" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="0,158,0,0" TextWrapping="Wrap" Text="Message Forecolor:" VerticalAlignment="Top"/>
+                    <Border BorderBrush="#FFABADB3" BorderThickness="1" HorizontalAlignment="Left" Height="32" Margin="109,88,0,0" VerticalAlignment="Top" Width="297">
+                        <Image Margin="-1" Source="/Microchat;component/Images/Icon.png"/>
+                    </Border>
+                    <TextBlock HorizontalAlignment="Left" Margin="411,2,0,0" TextWrapping="Wrap" Text="Conversations:" VerticalAlignment="Top"/>
+                    <ListBox Height="155" Margin="411,23,0,0" VerticalAlignment="Top"/>
+                    <Button Content="Save" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75"/>
+                    <Button Content="Cancel" HorizontalAlignment="Right" Margin="0,0,80,0" VerticalAlignment="Bottom" Width="75"/>
+                    <local:ColorPicker HorizontalAlignment="Left" Height="24" Margin="109,125,0,0" VerticalAlignment="Top" Width="297"/>
+                    <local:ColorPicker HorizontalAlignment="Left" Height="24" Margin="109,154,0,0" VerticalAlignment="Top" Width="297"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

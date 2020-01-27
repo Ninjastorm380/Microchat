@@ -49,7 +49,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Microchat.ico</ApplicationIcon>
+    <ApplicationIcon>Images\Microchat.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
@@ -74,18 +74,30 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Accounts.xaml.vb">
+    <Compile Include="Windows\Accounts.xaml.vb">
       <DependentUpon>Accounts.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Components\ColorPicker.xaml.vb">
+      <DependentUpon>ColorPicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Components\NumericUpDown.xaml.vb">
+      <DependentUpon>NumericUpDown.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RenderedMessage.vb" />
-    <Compile Include="Settings.xaml.vb">
+    <Compile Include="SearchComparator.vb" />
+    <Compile Include="Serialization.vb" />
+    <Compile Include="Windows\Settings.xaml.vb">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
-    <Page Include="Accounts.xaml">
+    <Page Include="Windows\Accounts.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Components\ColorPicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -93,11 +105,15 @@
       <DependentUpon>Application.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.vb">
+    <Compile Include="Windows\MainWindow.xaml.vb">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Settings.xaml">
+    <Page Include="Components\NumericUpDown.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -154,19 +170,35 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Microchat.ico" />
+    <Resource Include="Images\Microchat.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Send Message.png" />
+    <Resource Include="Images\Send Message.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Login.png" />
+    <Resource Include="Images\Login.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Conversations.png" />
+    <Resource Include="Images\Conversations.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Settings.png" />
+    <Resource Include="Images\Settings.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\NUDUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\NUDDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Transparent Indicator Tile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="ColorPicker"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Microchat"
+             mc:Ignorable="d" Width="296.078" Height="23.807">
+    <Grid>
+        <local:NumericUpDown HorizontalAlignment="Left" Height="Auto" Width="46" Margin="20,0,0,0"/>
+        <local:NumericUpDown HorizontalAlignment="Left" Height="Auto" Width="46" Margin="88,0,0,0"/>
+        <local:NumericUpDown HorizontalAlignment="Left" Height="Auto" Width="46" Margin="156,0,0,0"/>
+        <local:NumericUpDown Height="Auto" Width="46" Margin="224,0,0,0" HorizontalAlignment="Left"/>
+        <Grid HorizontalAlignment="Right" Width="24">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Microchat;component/Images/Transparent Indicator Tile.png"/>
+            </Grid.Background>
+            <Grid x:Name="PreviewBox" Background="#00000000"/>
+        </Grid>
+        <Label VerticalContentAlignment="Center" Content="A:" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="20" Background="#FFABADB3" BorderBrush="#FFABADB3"/>
+        <Label VerticalContentAlignment="Center" Content="R:" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="20" Background="#FFABADB3" BorderBrush="#FFABADB3" Margin="68,0,0,0"/>
+        <Label VerticalContentAlignment="Center" Content="G:" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="20" Background="#FFABADB3" BorderBrush="#FFABADB3" Margin="136,0,0,0"/>
+        <Label VerticalContentAlignment="Center" Content="B:" HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="20" Background="#FFABADB3" BorderBrush="#FFABADB3" Margin="204,0,0,0"/>
+    </Grid>
+</UserControl>
